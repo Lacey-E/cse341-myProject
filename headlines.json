@@ -1,0 +1,25 @@
+
+{
+    "headline": {
+      "headlineName": "Most Beautiful girl born",
+      "category": "fashion",
+      "id": 1,
+      "catchPhrase": "On April 2022, a beautiful.....",
+      "date": "12/12/23"
+    },
+    "headline2": {
+        "headlineName": "Terrorist Strikes again!",
+        "category": "Hot Headline",
+        "id": 2,
+        "catchPhrase": "On April 2022, boko haram a well-known.....",
+        "date": "12/12/23"
+      
+    },
+    "headline3": {
+        "headlineName": "Will Chef Doris win?",
+        "category": "Lifestyle",
+        "id": 3,
+        "catchPhrase": "It's another hot compitition of cooking and pots are .....",
+        "date": "12/12/23"
+    }
+  }
