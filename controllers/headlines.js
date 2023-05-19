@@ -24,7 +24,7 @@ const getSingle = async (req, res) => {
       category: req.body.category,
       id: req.body.id,
       catchPhrase: req.body.catchPhrase,
-      userName: req.body.userName
+      date: req.body.date
     };
     const response = await mongodb.getDb().db('Test').collection('headlines').insertOne(headline);
     if (response.acknowledged) {
