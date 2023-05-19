@@ -5,15 +5,15 @@ GET http://localhost:3000/headlines/6466b932cf150b48776e896b HTTP/1.1
 
 ### 
 
-POST http://localhost:3000/contacts HTTP/1.1
+POST http://localhost:3000/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "req.body.headlineName",
-      "category": "",
-      "id": "",
-      "catchPhrase": "",
-      "date": ""
+    "headlineName": "Shein update",
+      "category": "fashion",
+      "id": "4",
+      "catchPhrase": "Shien updated their....",
+      "date": "10/10/2023"
 }
 
 
@@ -28,9 +28,9 @@ POST https://esther-blog-api.onrender.com/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "req.body.headlineName",
-      "category": "",
-      "id": "",
-      "catchPhrase": "",
-      "date": ""
+    "headlineName": "Fake api?",
+      "category": "Tech",
+      "id": "5",
+      "catchPhrase": "Have you heard of the fake ....",
+      "date": "16/10/2024"
 }

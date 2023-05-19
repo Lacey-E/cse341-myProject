@@ -52,7 +52,7 @@
                 "catchPhrase": {
                   "example": "any"
                 },
-                "userName": {
+                "date": {
                   "example": "any"
                 }
               }
