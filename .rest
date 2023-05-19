@@ -2,57 +2,35 @@ GET http://localhost:3000/headlines HTTP/1.1
 ###
 
 GET http://localhost:3000/headlines/6466b932cf150b48776e896b HTTP/1.1
-###
 
-GET https://esther-node-js-class1.onrender.com HTTP/1.1
+### 
 
-###
-GET https://esther-node-js-class1.onrender.com/contacts HTTP/1.1
-
-###
-GET https://esther-node-js-class1.onrender.com/contacts/645576bb6914ce1fb3c870ee HTTP/1.1
-
-###
-GET https://esther-node-js-class1.onrender.com/contacts/645576bb6914ce1fb3c870ee HTTP/1.1
-
-### Create contact
 POST http://localhost:3000/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Ashley",
-    "lastName":"Weaver",
-    "email":"aWeaver@test.com",
-    "favoriteColor":"Brown",
-    "birthday":"06/19/2000"
+    "headlineName": "req.body.headlineName",
+      "category": "",
+      "id": "",
+      "catchPhrase": "",
+      "date": ""
 }
 
 
-###
 
-PUT  http://localhost:3000/contacts/6459613964d0e497d61010fa HTTP/1.1
+###
+GET https://esther-blog-api.onrender.com/headlines HTTP/1.1
+
+###
+GET https://esther-blog-api.onrender.com/headlines/6466b932cf150b48776e896b HTTP/1.1
+###
+POST https://esther-blog-api.onrender.com/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Ashley Ray",
-    "lastName":"Menderouz",
-    "email":"aRay@test.com",
-    "favoriteColor":"Brdfswown",
-    "birthday":"06/19/200ds0"
+    "headlineName": "req.body.headlineName",
+      "category": "",
+      "id": "",
+      "catchPhrase": "",
+      "date": ""
 }
-
-
-### 
-DELETE http://localhost:3000/contacts/645952a55dccee49453175e1 HTTP/1.1
-
-###
-
-GET https://esther-node-js-class1.onrender.com/contacts/6459613964d0e497d61010fa HTTP/1.1
-
-
-###
-GET https://esther-node-js-class1.onrender.com/contacts/645952a55dccee49453175e1 HTTP/1.1
-
-
-###
-DELETE https://esther-node-js-class1.onrender.com/contacts/6459613964d0e497d61010fa HTTP/1.1
