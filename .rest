@@ -12,7 +12,7 @@ content-type: application/json
     "headlineName": "Shein update",
       "category": "fashion",
       "id": "4",
-      "catchPhrase": "Shien updated their....",
+      "catchPhrase": "fdgdgttrfgr",
       "date": "10/10/2023"
 }
 

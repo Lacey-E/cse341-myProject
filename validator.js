@@ -1,15 +1,14 @@
 
 const { body, validationResult } = require('express-validator')
-const contactValidationRules = () => {
+const headlineValidationRules = () => {
   return [
    
-    body('headlineName').isLength({min: 2}),
+    
     // password must be at least 5 chars long
     body('category').isLength({ min: 5 }),
      // username must be an email
-     body('id').isLength({ min: 5 }),
-     body('catchPhrase').isLength({ min: 5 }),
-    body('date').isDate()
+     body('id').isNumeric(),
+     body('catchPhrase').isLength({ min: 5 })
   ]
 }
 
@@ -25,6 +24,7 @@ const validate = (req, res, next) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
     return next()
+
   }
   const extractedErrors = []
   errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
@@ -35,6 +35,6 @@ const validate = (req, res, next) => {
 }
 
 module.exports = {
-  contactValidationRules,
+  headlineValidationRules,
   validate,
 }

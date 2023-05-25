@@ -18,7 +18,7 @@ const getSingle = async (req, res) => {
     });
   };
   
-  const createContact = async (req, res) => {
+  const createHeadline = async (req, res) => {
     const headline = {
       headlineName: req.body.headlineName,
       category: req.body.category,
@@ -30,11 +30,11 @@ const getSingle = async (req, res) => {
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
-      res.status(500).json(response.error || 'Some error occurred while creating the contact.');
+      res.status(500).json('Some error occurred while creating the contact.');
     }
   };
    
   module.exports = {
     getAll,
     getSingle,
-    createContact};
+    createHeadline};
