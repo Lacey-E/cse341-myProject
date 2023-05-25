@@ -16,6 +16,8 @@ content-type: application/json
       "date": "10/10/2023"
 }
 
+###
+DELETE http://localhost:3000/headlines/646fba2cadd7f8648e5c3f68 HTTP/1.1
 
 
 ###

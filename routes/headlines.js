@@ -9,7 +9,7 @@ Router.get("/", headlinesController.getAll);
 Router.get("/:id", headlinesController.getSingle);
 // contactValidationRules(), validate, contactsController.createContact);
 
-
+Router.delete("/:id", headlinesController.deleteHeadline);
 
 Router.post("/", headlineValidationRules(), validate, headlinesController.createHeadline);
  
