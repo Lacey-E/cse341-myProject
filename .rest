@@ -19,6 +19,8 @@ content-type: application/json
 ###
 DELETE http://localhost:3000/headlines/646fba2cadd7f8648e5c3f68 HTTP/1.1
 
+###
+DELETE https://esther-blog-api.onrender.com/headlines/646fba2cadd7f8648e5c3f68 HTTP/1.1
 
 ###
 GET https://esther-blog-api.onrender.com/headlines HTTP/1.1
