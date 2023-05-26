@@ -28,6 +28,7 @@ const getSingle = async (req, res) => {
       catchPhrase: req.body.catchPhrase,
       date: req.body.date
     };
+    
     const response = await mongodb.getDb().db('Test').collection('headlines').insertOne(headline);
     if (response.acknowledged) {
       res.status(201).json(response);
