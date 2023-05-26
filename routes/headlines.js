@@ -7,10 +7,11 @@ const headlinesController = require("../controllers/headlines");
 Router.get("/", headlinesController.getAll);
 
 Router.get("/:id", headlinesController.getSingle);
-// contactValidationRules(), validate, contactsController.createContact);
+
 
 Router.delete("/:id", headlinesController.deleteHeadline);
 
+Router.put('/:id', headlineValidationRules(), validate, headlinesController.updateHeadlines);
 
 
 Router.post("/", headlineValidationRules(), validate, headlinesController.createHeadline);
