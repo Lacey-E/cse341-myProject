@@ -11,13 +11,13 @@ content-type: application/json
 {
     "headlineName": "Shein update",
       "category": "fashion",
-      "id": "4",
+      "id": "12",
       "catchPhrase": "fdgdgttrfgr",
       "date": "10/10/2023"
 }
 
 ###
-DELETE http://localhost:3000/headlines/646fba2cadd7f8648e5c3f68 HTTP/1.1
+DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
 
 ###
 DELETE https://esther-blog-api.onrender.com/headlines/646fba2cadd7f8648e5c3f68 HTTP/1.1
