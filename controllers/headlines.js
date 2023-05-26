@@ -45,7 +45,7 @@ const getSingle = async (req, res) => {
     
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).json('Sucessfully deleted');
+      res.status(201).json(response + 'Sucessfully deleted');
     } else {
       res.status(500).json(response.error || 'Some error occurred while deleting the contact.');
     }
