@@ -11,7 +11,7 @@ Router.get("/:id", headlinesController.getSingle);
 
 Router.delete("/:id", headlinesController.deleteHeadline);
 
-const { userValidationRules, validate } = require('./validator.js')
+
 
 Router.post("/", headlineValidationRules(), validate, headlinesController.createHeadline);
  
