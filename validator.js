@@ -4,9 +4,8 @@ const headlineValidationRules = () => {
   return [
    
     
-    // password must be at least 5 chars long
+    body('headline').isString({min:2}),
     body('category').isLength({ min: 4 }),
-     // username must be an email
      body('id').isNumeric(),
      body('catchPhrase').isLength({ min: 5 })
   ]
