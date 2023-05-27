@@ -68,7 +68,7 @@ const getSingle = async (req, res) => {
     console.log(response);
 
     if (response.modifiedCount > 0) {
-      res.status(204).send();
+      res.status(204).json(response) + 'Sucessfully Upadated';
     } else {
       res.status(500).json(response.error || 'Some error occurred while updating the contact.');
     }
