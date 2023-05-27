@@ -20,7 +20,7 @@ content-type: application/json
 DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
 
 ###
-DELETE https://esther-blog-api.onrender.com/headlines/6472552aeeb0afd19ca09b3d HTTP/1.1
+DELETE https://esther-blog-api.onrender.com/headlines/6472552aeeb0afd19ca09b3 HTTP/1.1
 
 ###
 PUT  https://esther-blog-api.onrender.com/headlines/6472515f037d34463e4ca58e HTTP/1.1

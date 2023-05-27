@@ -2,8 +2,6 @@
 const { body, validationResult } = require('express-validator')
 const headlineValidationRules = () => {
   return [
-   
-    
     body('headlineName').notEmpty({minLength: 1}),
     body('category').isLength({ min: 4 }),
      body('id.*.number').isInt(),
