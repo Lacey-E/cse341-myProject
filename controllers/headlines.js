@@ -30,7 +30,7 @@ const getSingle = async (req, res) => {
     };
     const response = await mongodb.getDb().db('Test').collection('headlines').insertOne(headline);
     if (response.acknowledged) {
-      res.status(201).json(response + 'Contact Created');
+      res.status(201).json(response) + 'created successfully';
     } else {
       res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
@@ -45,7 +45,7 @@ const getSingle = async (req, res) => {
     
     console.log(response);
     if (response.deletedCount > 0) {
-      res.status(204).json(response + 'Sucessfully deleted');
+      res.status(200).json(response) + 'deleted';
     } else {
       res.status(500).json('Some error occurred while deleting the contact.');
     }

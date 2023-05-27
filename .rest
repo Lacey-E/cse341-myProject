@@ -20,7 +20,7 @@ content-type: application/json
 DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
 
 ###
-DELETE https://esther-blog-api.onrender.com/headlines/64725134037d34463e4ca58d HTTP/1.1
+DELETE https://esther-blog-api.onrender.com/headlines/647253bc64d6d49302481967 HTTP/1.1
 
 ###
 PUT  https://esther-blog-api.onrender.com/headlines/6472515f037d34463e4ca58e HTTP/1.1
@@ -29,7 +29,7 @@ content-type: application/json
 {
     "headlineName": "Fake api?",
       "category": "Tech",
-      "id": "10",
+      "id": "1000",
       "catchPhrase": "Have you.......",
       "date": "16/10/2024"
 }
