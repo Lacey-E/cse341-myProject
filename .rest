@@ -9,9 +9,9 @@ POST http://localhost:3000/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "Shein update",
+    "headlineName": "eee",
       "category": "fashion",
-      "id": "12",
+      "id": 12,
       "catchPhrase": "fdgdgttrfgr",
       "date": "10/10/2023"
 }

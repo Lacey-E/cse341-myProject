@@ -4,9 +4,9 @@ const headlineValidationRules = () => {
   return [
    
     
-    body('headlineName').isString({min: 3}),
+    body('headlineName').notEmpty({minLength: 1}),
     body('category').isLength({ min: 4 }),
-     body('id').isNumeric(),
+     body('id.*.number').isInt(),
      body('catchPhrase').isLength({ min: 5 })
   ]
 }
