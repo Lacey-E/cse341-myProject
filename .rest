@@ -27,9 +27,9 @@ PUT  https://esther-blog-api.onrender.com/headlines/6472515f037d34463e4ca58e HTT
 content-type: application/json
 
 {
-    "headlineName": "",
+    "headlineName": "esther",
       "category": "Tech",
-      "id": 1000,
+      "id": "1000",
       "catchPhrase": "Have you.......",
       "date": "16/10/2024"
 }
