@@ -29,7 +29,7 @@ content-type: application/json
 {
     "headlineName": "",
       "category": "Tech",
-      "id": "1000",
+      "id": 1000,
       "catchPhrase": "Have you.......",
       "date": "16/10/2024"
 }
@@ -45,7 +45,7 @@ POST https://esther-blog-api.onrender.com/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "Fake api?",
+    "headlineName": "",
       "category": "Tech",
       "id": "5",
       "catchPhrase": "Have you heard of the fake ....",
