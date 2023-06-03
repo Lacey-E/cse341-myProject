@@ -9,10 +9,10 @@ POST http://localhost:3000/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "eee",
+    "headlineName": "tth",
       "category": "fashion",
       "id": 12,
-      "catchPhrase": "fdgdgttrfgr",
+      "catchPhrase": "fdgfh",
       "date": "10/10/2023"
 }
 
@@ -20,14 +20,14 @@ content-type: application/json
 DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
 
 ###
-DELETE https://esther-blog-api.onrender.com/headlines/6472552aeeb0afd19ca09b3 HTTP/1.1
+DELETE https://esther-blog-api.onrender.com/headlines/647267ff598b32171668164b HTTP/1.1
 
 ###
-PUT  https://esther-blog-api.onrender.com/headlines/6472515f037d34463e4ca58e HTTP/1.1
+PUT  https://esther-blog-api.onrender.com/headlines/647267ff598b32171668164b HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "",
+    "headlineName": "Zara c",
       "category": "Tech",
       "id": 1000,
       "catchPhrase": "Have you.......",
@@ -45,7 +45,7 @@ POST https://esther-blog-api.onrender.com/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "",
+    "headlineName": "weef",
       "category": "Tech",
       "id": "5",
       "catchPhrase": "Have you heard of the fake ....",
