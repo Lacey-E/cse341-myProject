@@ -6,6 +6,18 @@ const mongodb = require('./db/connect.js');
 
 
 var app = express();
+
+app.set('view engine', 'ejs')
+
+
+app.get('/', (req,res)=> {
+    res.render('home');})
+
+
+
+
+
+
 const port = process.env.PORT || 3000
 
 app.use(bodyParser.json()).use((req,res,next) =>{
