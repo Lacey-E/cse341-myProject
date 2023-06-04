@@ -1,12 +1,15 @@
-const mongodb = require('../db/connect');
-const ObjectId = require('mongodb').ObjectId;
+const dotenv = require('dotenv');
+dotenv.config();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 
+
+
+
 passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/"
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, cb) {
     User.findOrCreate({ googleId: profile.id }, function (err, user) {

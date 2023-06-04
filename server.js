@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect.js');
 
 
-
-
 var app = express();
 
 app.set('view engine', 'ejs')
