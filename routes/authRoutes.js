@@ -19,5 +19,7 @@ Router.get('/google',passport.authenticate('google',{
     scope: ['profile']
 }))
 
+Router.get('/google/callback', authController.setProfile);
+
 
 module.exports =Router;
