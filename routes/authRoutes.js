@@ -19,7 +19,10 @@ Router.get('/google',passport.authenticate('google',{
     scope: ['profile']
 }))
 
-Router.get('/google/callback', authController.setProfile);
+Router.get('/google/callback', passport.authenticate('google', {failureRedirect: 
+'/'}), (req, res) => {
+    res.redirect('/login')
+});
 
 
 module.exports =Router;

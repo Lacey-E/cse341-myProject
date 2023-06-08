@@ -1,7 +1,8 @@
 var express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect.js');
-
+const dotenv = require('dotenv');
+const connectDB = require('./db/connect')
 
 var app = express();
 
@@ -12,7 +13,7 @@ app.set('view engine', 'ejs')
 //     res.render('home');})
 
 
-
+// connectDB()
 
 
 
