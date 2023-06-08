@@ -26,7 +26,9 @@ passport.use(
     if (user) {
       cb(null, user)
     } else {
-      user = await User.create(newUser)
+      user = await mongodb.getDb().db('Test').collection('profile').insertOne(newUser)
+   
+
       cb(null, user)
     }
     
