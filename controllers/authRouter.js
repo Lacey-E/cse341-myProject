@@ -6,7 +6,7 @@ module.exports.logout = (req, res) => {
 }
 
 module.exports.setProfile = (req, res) => {
-    res.send('Welcome New User')
+    res.redirect('/api-docs')
 }
 
 

@@ -5,14 +5,14 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require('../model/user-model')
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
-
+const mongoose = require('mongoose');
 
 passport.use(
   new GoogleStrategy(
     {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "/auth/google/callback"
   },
   async (accessToken, refreshToken, profile, cb) => {
     
@@ -21,31 +21,15 @@ passport.use(
             displayName: profile.displayName,
             gender: profile.gender
     }
-    //  const userId = new ObjectId(req.params.id);
-    // mongodb.getDb().db('Test').collection('headlines').find({ _id: userId }).toArray((err, result)
     try {
-      // const user = new ObjectId(profile.id);
-      // mongodb.getDb().db('Test').collection('profile').find({ _id: user })
-      //  let user = await User.find({googleId: profile.id})
-      //  let user = await User.create({googleId: profile.id})
-      
 
-    // if (user) {
-    //   cb(null, user)
-    // } else {
-      let response = await mongodb.getDb().db('Test').collection('profile').insertOne(newUser);
-      if (response.acknowledged) {
-       console.log('created successfully');
-      } 
-      
-      // else {
-      //   res.status(500).json(response.error || 'Some error occurred while creating the contact.');
-      // }
-      //res.status(201).json(response) + 
-      // cb(null, user)
-    // }
-    
-    
+      let user = await User.findOne({ googleId: profile.id})
+      if (user) {
+        done(null, user)
+      }else {
+        user = await User.create(newUser)
+        done(null, user)
+      }
     } catch (err) {
       console.error(err)
     }
@@ -53,7 +37,13 @@ passport.use(
   }
 ));
 
+passport.serializeUser((user, done) => {
+  done(null, user.id)
+})
 
+passport.deserializeUser((id, done) => {
+  User.findById(id, (err, user ) => done(err, user))
+})
 
 
 
