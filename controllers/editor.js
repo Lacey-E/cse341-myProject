@@ -2,7 +2,7 @@ const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
-  const result = await mongodb.getDb().db('Test').collection('headlines').find();
+  const result = await mongodb.getDb().db('Test').collection('profile').find();
   result.toArray().then((lists) => {
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(lists);
@@ -14,7 +14,7 @@ const getSingle = async (req, res) => {
     res.status(400).json('Must use a valid contact id to find a contact.');
   }
   const userId = new ObjectId(req.params.id);
-  mongodb.getDb().db('Test').collection('headlines').find({ _id: userId }).toArray((err, result) => {
+  mongodb.getDb().db('Test').collection('profile').find({ _id: userId }).toArray((err, result) => {
       if (err) {
         res.status(400).json({ message: err });
       }
@@ -26,17 +26,13 @@ const getSingle = async (req, res) => {
 
   
   const createHeadline = async (req, res) => {
-    const headline = {
-      headlineName: req.body.headlineName,
-      category: req.body.category,
-      id: req.body.id,
-      catchPhrase: req.body.catchPhrase,
-      author: req.body.author,
-      blog: req.body.blog,
-      date: req.body.date
+    const editorProfile = {
+      editorName: req.body.editorName,
+      position: req.body.position,
+      category: req.body.id
 
     };
-    const response = await mongodb.getDb().db('Test').collection('headlines').insertOne(headline);
+    const response = await mongodb.getDb().db('Test').collection('profile').insertOne(editorProfile);
     if (response.acknowledged) {
       res.status(201).json(response) + 'created successfully';
     } else {
@@ -49,7 +45,7 @@ const getSingle = async (req, res) => {
       res.status(400).json('Must use a valid contact id to delete a contact.');
     }
     const userId = new ObjectId(req.params.id);
-    const response = await mongodb.getDb().db('Test').collection('headlines').deleteOne({_id: userId}, true);
+    const response = await mongodb.getDb().db('Test').collection('profile').deleteOne({_id: userId}, true);
     
     console.log(response);
     if (response.deletedCount > 0) {
@@ -64,23 +60,20 @@ const getSingle = async (req, res) => {
       res.status(400).json('Must use a valid contact id to update a contact.');
     }
     const userId = new ObjectId(req.params.id);
-    // be aware of updateOne if you only want to update specific fields
-    const headline = {
-      headlineName: req.body.headlineName,
-      category: req.body.category,
-      id: req.body.id,
-      catchPhrase: req.body.catchPhrase,
-      author: req.body.author,
-      blog: req.body.blog,
-      date: req.body.date
+    // be aware of updateOne 
+    const editorProfile = {
+      editorName: req.body.editorName,
+      position: req.body.position,
+      category: req.body.id
+
     };
-    const response = await mongodb.getDb().db('Test').collection('headlines').replaceOne({ _id: userId }, headline);
+    const response = await mongodb.getDb().db('Test').collection('profile').replaceOne({ _id: userId }, headline);
     console.log(response);
 
     if (response.modifiedCount > 0) {
-      res.status(204).json(response) + 'Sucessfully Upadated';
+      res.status(204).json(response) + 'Sucessfully Updated';
     } else {
-      res.status(500).json(response.error || 'Some error occurred while updating the contact.');
+      res.status(500).json(response.error || 'Some error occurred while updating the editor Profile.');
     }
   };
 

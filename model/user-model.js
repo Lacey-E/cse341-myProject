@@ -3,18 +3,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 const Schema = mongoose.Schema;
 
-//connect to mongodb
-
-// mongoose.connect(process.env.MONGODB_URI,()=>{
-//     console.log('connected to mongod');} 
-//     )
 
 
 
 const userSchema = new Schema({
-    username: String,
+  
     googleId: String,
-    gender: String
+    displayname: String
 });
 
 const User = mongoose.model('user', userSchema);

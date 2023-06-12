@@ -1,12 +1,34 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId
+let userLoggedIn = false;
 
 module.exports.logout = (req, res) => {
+    
     res.send('logging Out')
 }
 
+module.exports.authCheck = (req, res, next) => {
+    if(!userLoggedIn) {
+        console.log(userLoggedIn)
+            res.redirect('/api-docs')
+        
+        } else {
+            next()
+        }
+}
+
 module.exports.setProfile = (req, res) => {
-    res.redirect('/api-docs')
+  userLoggedIn = true
+    
+    console.log(userLoggedIn)
+    if (userLoggedIn == true) {
+        res.redirect('/api-docs')
+    } else{
+        userLoggedIn = false
+    }
+
+   
+
 }
 
 

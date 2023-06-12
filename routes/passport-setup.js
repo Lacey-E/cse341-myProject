@@ -19,13 +19,17 @@ passport.use(
     const newUser = { 
             googleId: profile.id,
             displayName: profile.displayName,
-            gender: profile.gender
+    
     }
     try {
 
       let user = await User.findOne({ googleId: profile.id})
+
+
       if (user) {
+
         done(null, user)
+
       }else {
         user = await User.create(newUser)
         done(null, user)

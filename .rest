@@ -9,15 +9,36 @@ POST http://localhost:3000/headlines HTTP/1.1
 content-type: application/json
 
 {
-    "headlineName": "tth",
-      "category": "fashion",
-      "id": 12,
-      "catchPhrase": "fdgfh",
-      "date": "10/10/2023"
+      "headlineName": "Where is Gucchi?",
+      "category": "Fashion",
+      "id": "23",
+      "catchPhrase":"Water and fashion cannot...",
+      "author": "Esther ezu",
+      "blog": "Educat",
+      "date": "23/1/2023"
 }
 
 ###
 DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
+###
+
+
+
+
+POST http://localhost:3000/editor HTTP/1.1
+content-type: application/json
+
+{
+
+      "editorName": "Esther EEE",
+      "position": "Chief Editor",
+      "category": "Arts"
+
+}
+
+###
+DELETE http://localhost:3000/editor/6470f7245539d11645396048 HTTP/1.1
+
 
 ###
 DELETE https://esther-blog-api.onrender.com/headlines/647267ff598b32171668164b HTTP/1.1

@@ -3,10 +3,24 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect.js');
 const dotenv = require('dotenv');
 const connectDB = require('./db/connect')
+const cookieSession = require('cookie-session');
+const passport = require('passport');
+
 
 var app = express();
 
+
 app.set('view engine', 'ejs')
+
+
+app.use(cookieSession({
+    maxAge: 24*60*60,
+    keys: [process.env.cookieKey]
+}))
+
+// intialize passport
+app.use(passport.initialize());
+app.use(passport.session())
 
 
 // app.get('/', (req,res)=> {

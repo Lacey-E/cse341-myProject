@@ -17,8 +17,22 @@ Router.get('/logout', authController.logout);
 // Authentication with Google
 Router.get('/google',passport.authenticate('google',{
     scope: ['profile']
+    
 }))
 
-Router.get('/google/callback', authController.setProfile);
+
+// Router.get('/google/callback', passport.authenticate('google'),
+// (req, res)=> {
+
+//     res.send('welcome new person')
+// });
+
+
+Router.get('/google/callback', authController.authCheck, authController.setProfile);
+
+Router.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/login')
+})
 
 module.exports =Router;
