@@ -29,7 +29,7 @@ const getSingle = async (req, res) => {
     const editorProfile = {
       editorName: req.body.editorName,
       position: req.body.position,
-      category: req.body.id
+      category: req.body.category
 
     };
     const response = await mongodb.getDb().db('Test').collection('profile').insertOne(editorProfile);
@@ -64,10 +64,10 @@ const getSingle = async (req, res) => {
     const editorProfile = {
       editorName: req.body.editorName,
       position: req.body.position,
-      category: req.body.id
+      category: req.body.category
 
     };
-    const response = await mongodb.getDb().db('Test').collection('profile').replaceOne({ _id: userId }, headline);
+    const response = await mongodb.getDb().db('Test').collection('profile').replaceOne({ _id: userId }, editorProfile);
     console.log(response);
 
     if (response.modifiedCount > 0) {

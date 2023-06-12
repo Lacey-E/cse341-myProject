@@ -12,7 +12,7 @@ const editorValidationRules = () => {
   return [
     body('editorName').notEmpty({minLength: 1}),
     body('position').isLength({ min: 4 }),
-     body('category').notEmpty({minLength: 1})
+    body('category').notEmpty({ min: 3 })
      
   ]
 }
