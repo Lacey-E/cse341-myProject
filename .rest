@@ -44,6 +44,18 @@ DELETE http://localhost:3000/editor/6470f7245539d11645396048 HTTP/1.1
 DELETE https://esther-blog-api.onrender.com/headlines/647267ff598b32171668164b HTTP/1.1
 
 ###
+POST  https://esther-blog-api.onrender.com/editor  HTTP/1.1
+content-type: application/json
+
+{
+    "editorName": "Esther EEE",
+      "position": "Chief Editor",
+      "category": "Arts"
+
+}
+
+
+###
 PUT  https://esther-blog-api.onrender.com/headlines/647267ff598b32171668164b HTTP/1.1
 content-type: application/json
 
@@ -54,7 +66,6 @@ content-type: application/json
       "catchPhrase": "Have you.......",
       "date": "16/10/2024"
 }
-
 
 ###
 GET https://esther-blog-api.onrender.com/headlines HTTP/1.1

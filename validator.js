@@ -1,4 +1,3 @@
-
 const { body, validationResult } = require('express-validator')
 const headlineValidationRules = () => {
   return [
@@ -8,6 +7,16 @@ const headlineValidationRules = () => {
      body('catchPhrase').isLength({ min: 5 })
   ]
 }
+
+const editorValidationRules = () => {
+  return [
+    body('editorName').notEmpty({minLength: 1}),
+    body('position').isLength({ min: 4 }),
+     body('category').notEmpty({minLength: 1})
+     
+  ]
+}
+
 
 
 // headlineName: req.body.headlineName,
@@ -34,4 +43,5 @@ const validate = (req, res, next) => {
 module.exports = {
   headlineValidationRules,
   validate,
+  editorValidationRules
 }

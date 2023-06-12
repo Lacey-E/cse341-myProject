@@ -25,7 +25,7 @@ const getSingle = async (req, res) => {
 
 
   
-  const createHeadline = async (req, res) => {
+  const createEditor= async (req, res) => {
     const editorProfile = {
       editorName: req.body.editorName,
       position: req.body.position,
@@ -40,7 +40,7 @@ const getSingle = async (req, res) => {
     }
   };
    
-  const deleteHeadline = async (req, res) => {
+  const deleteEditor = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid contact id to delete a contact.');
     }
@@ -55,7 +55,7 @@ const getSingle = async (req, res) => {
     }
   };
 
-  const updateHeadlines = async (req, res) => {
+  const updateEditor = async (req, res) => {
     if (!ObjectId.isValid(req.params.id)) {
       res.status(400).json('Must use a valid contact id to update a contact.');
     }
@@ -81,6 +81,6 @@ const getSingle = async (req, res) => {
   module.exports = {
     getAll,
     getSingle,
-    createHeadline,
-    updateHeadlines,
-  deleteHeadline};
+    createEditor,
+    updateEditor,
+  deleteEditor};

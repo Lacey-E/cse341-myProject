@@ -1,6 +1,6 @@
 const express = require("express");
 const Router = express.Router();
-const { headlineValidationRules, validate } = require('../validator.js');
+const { headlineValidationRules, validate, editorValidationRules } = require('../validator.js');
 
 
 
@@ -12,12 +12,12 @@ Router.get("/", editorController.getAll);
 Router.get("/:id", editorController.getSingle);
 
 
-Router.delete("/:id", editorController.deleteHeadline);
+Router.delete("/:id", editorController.deleteEditor);
 
-Router.put('/:id', headlineValidationRules(), validate, editorController.updateHeadlines);
+Router.put('/:id', editorValidationRules(), validate, editorController.updateEditor);
 
 
-Router.post("/", headlineValidationRules(), validate, editorController.createHeadline);
+Router.post("/", editorValidationRules(), validate, editorController.createEditor);
  
 
 module.exports = Router;
