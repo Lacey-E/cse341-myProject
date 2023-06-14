@@ -10,7 +10,7 @@ module.exports.logout = (req, res) => {
 module.exports.authCheck = (req, res, next) => {
     if(!userLoggedIn) {
         console.log(userLoggedIn)
-            res.redirect('/api-docs')
+            res.redirect('/login')
         
         } else {
             next()
@@ -22,7 +22,7 @@ module.exports.setProfile = (req, res) => {
     
     console.log(userLoggedIn)
     if (userLoggedIn == true) {
-        res.redirect('/api-docs')
+        res.redirect('/login')
     } else{
         userLoggedIn = false
     }
