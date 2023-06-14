@@ -5,10 +5,10 @@
     "description": "Contact Api",
     "version": "1.0.0"
   },
-  "host": "esther-blog-api.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/api-docs": {
@@ -68,6 +68,9 @@
         "responses": {
           "201": {
             "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "422": {
             "description": "Unprocessable Entity"
@@ -235,7 +238,7 @@
                 "position": {
                   "example": "any"
                 },
-                "id": {
+                "category": {
                   "example": "any"
                 }
               }
@@ -321,7 +324,7 @@
                 "position": {
                   "example": "any"
                 },
-                "id": {
+                "category": {
                   "example": "any"
                 }
               }

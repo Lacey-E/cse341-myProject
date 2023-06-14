@@ -3,6 +3,18 @@ const Router = express.Router();
 const { headlineValidationRules, validate } = require('../validator.js');
 
 
+const authenticated = (req,res,next) => {
+    try{
+        if (req.session.token){
+            next()
+        }else{
+            throw new Error("Please Login to Continue........")
+        }
+    }catch(err){
+        res.status(400).json({message:err.message})
+    }
+}
+
 
 
 const headlinesController = require("../controllers/headlines");
@@ -12,12 +24,12 @@ Router.get("/", headlinesController.getAll);
 Router.get("/:id", headlinesController.getSingle);
 
 
-Router.delete("/:id", headlinesController.deleteHeadline);
+Router.delete("/:id", authenticated, headlinesController.deleteHeadline);
 
-Router.put('/:id', headlineValidationRules(), validate, headlinesController.updateHeadlines);
+Router.put('/:id', authenticated, headlineValidationRules(), validate, headlinesController.updateHeadlines);
 
 
-Router.post("/", headlineValidationRules(), validate, headlinesController.createHeadline);
+Router.post("/", authenticated, headlineValidationRules(), validate, headlinesController.createHeadline);
  
 
 module.exports = Router;

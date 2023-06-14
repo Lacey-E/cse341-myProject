@@ -5,13 +5,13 @@ GET http://localhost:3000/headlines/6466b932cf150b48776e896b HTTP/1.1
 
 ### 
 
-POST http://localhost:3000/headlines HTTP/1.1
+POST https://esther-blog-api.onrender.com/headlines/ HTTP/1.1
 content-type: application/json
 
 {
-      "headlineName": "Where is Gucchi?",
+      "headlineName": "cokedddd",
       "category": "Fashion",
-      "id": "23",
+      "id": "",
       "catchPhrase":"Water and fashion cannot...",
       "author": "Esther ezu",
       "blog": "Educat",
@@ -19,11 +19,11 @@ content-type: application/json
 }
 
 ###
-DELETE http://localhost:3000/headlines/6470f7245539d11645396048 HTTP/1.1
+DELETE https://esther-blog-api.onrender.com/headlines/6470f7245539d11645396048 HTTP/1.1
 
 
 ###
-POST http://localhost:3000/editor HTTP/1.1
+PUT http://localhost:3000/editor HTTP/1.1
 content-type: application/json
 
 {

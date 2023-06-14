@@ -5,6 +5,8 @@ const doc = {
     title: 'My Blog Headlines API',
     description: 'Contact Api'
   },
+  // host: 'localhost:3000',
+  // schemes: ['http']
   host: 'esther-blog-api.onrender.com',
   schemes: ['https']
 };
